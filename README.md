@@ -1,5 +1,10 @@
 # MindReader
 
+[![Build](https://github.com/Razee4315/MindReader/actions/workflows/build.yml/badge.svg)](https://github.com/Razee4315/MindReader/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Razee4315/MindReader)](https://github.com/Razee4315/MindReader/releases)
+![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
+
 A small C++ console game that guesses a name you only *think* of — you never type a single letter.
 
 I made this during my semester. It's not much, just a fun little project I wrote myself while learning C++.

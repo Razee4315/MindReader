@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Show compiler version
+        run: g++ --version
+
+      - name: Compile (C++17, warnings treated as errors)
+        run: g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -o mindreader main.cpp
+
+      - name: Smoke test (must guess "cat")
+        run: |
+          output=$(printf '3\n2\n0\n4\n0\n0\n3\n' | ./mindreader)
+          echo "$output" | tail -1
+          echo "$output" | grep -q 'thinking of is: "cat"'
+          echo "Smoke test passed: program reconstructed the name correctly."
