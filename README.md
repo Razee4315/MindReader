@@ -4,6 +4,14 @@ A small C++ console game that guesses a name you only *think* of — you never t
 
 I made this during my semester. It's not much, just a fun little project I wrote myself while learning C++.
 
+## Sample run
+
+Here it is guessing the name **saqlain**:
+
+<p align="center">
+  <img src="assets/screenshot.png" alt="A sample run of MindReader guessing the name saqlain" width="420">
+</p>
+
 ## How it works
 
 There's a fixed 6×5 board of the alphabet. Every letter sits in one cell, so it has a **column** (0–4) and a **position/row** (0–5).
