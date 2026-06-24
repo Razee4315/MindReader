@@ -1,0 +1,32 @@
+name: release
+
+# When you push a version tag (e.g. v1.0.0), build a standalone Windows .exe
+# and attach it to that tag's GitHub Release so people can just download it.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write   # required to upload assets to the release
+
+jobs:
+  windows-exe:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install MinGW-w64 (Windows cross-compiler)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++-mingw-w64-x86-64
+
+      - name: Build standalone Windows .exe
+        run: x86_64-w64-mingw32-g++ -std=c++17 -O2 -static -o mindreader.exe main.cpp
+
+      - name: Attach the .exe to the GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mindreader.exe
