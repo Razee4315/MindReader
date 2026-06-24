@@ -31,7 +31,9 @@ That's the whole trick: two numbers per letter is enough to know the letter.
 
 ## How to run
 
-You need a C++ compiler (like g++).
+**Just want to play it?** Download `mindreader.exe` from the [Releases page](https://github.com/Razee4315/MindReader/releases/latest) and double-click it (Windows, no install needed).
+
+**Want to build it yourself?** You need a C++ compiler (like g++).
 
 ```
 g++ -std=c++17 -o name_guessing main.cpp
